@@ -1,0 +1,15 @@
+transformers
+torch
+datasets
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+plotly
+huggingface-hub
+accelerate
+nltk
+spacy
+wordcloud
+kaggle
