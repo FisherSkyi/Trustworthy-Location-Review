@@ -15,13 +15,16 @@ class FeatureExtractor:
 
     def extract_text_features(self, text):
         """Extract textual features from review text"""
+        if not isinstance(text, str):
+            text = ""
         features = {}
 
         # Basic text statistics
         features['text_length'] = len(text)
-        features['word_count'] = len(text.split())
+        words = text.split()
+        features['word_count'] = len(words)
         features['sentence_count'] = len(text.split('.'))
-        features['avg_word_length'] = np.mean([len(word) for word in text.split()])
+        features['avg_word_length'] = np.mean([len(word) for word in words]) if words else 0
 
         # Character-level features
         features['char_count'] = len(text)
@@ -106,7 +109,7 @@ if __name__ == '__main__':
         print(list(features_df.columns))
 
         # Combine with original data
-        df_with_features = pd.concat([df, features_df], axis=1)
+        df_with_features = pd.concat([df.reset_index(drop=True), features_df], axis=1)
         print(f"\nDataset shape with features: {df_with_features.shape}")
 
         # Display feature statistics
