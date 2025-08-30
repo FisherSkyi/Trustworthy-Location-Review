@@ -14,7 +14,6 @@ def load_and_preprocess_dataset(file_path):
             
             # Rename 'text' to 'review_text'
             df = df.rename(columns={'text': 'review_text'})
-            
             return df
         else:
             print(f"File not found: {file_path}")
