@@ -40,3 +40,32 @@ move .\kaggle.json $env:USERPROFILE\.kaggle\kaggle.json
 ```bash
 python download_kaggle_dataset.py
 ```
+## Dataset Preprocessing and Statistical Analysis
+
+```bsh
+ Dataset Info:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1100 entries, 0 to 1099
+Data columns (total 2 columns):
+ #   Column       Non-Null Count  Dtype 
+---  ------       --------------  ----- 
+ 0   review_text  1100 non-null   object
+ 1   rating       1100 non-null   int64 
+dtypes: int64(1), object(1)
+memory usage: 17.3+ KB
+None
+
+ Dataset shape: (1100, 2)
+
+ First 5 reviews:
+                                         review_text  rating
+0  We went to Marmaris with my wife for a holiday...       5
+1  During my holiday in Marmaris we ate here to f...       4
+2  Prices are very affordable. The menu in the ph...       3
+3  Turkey's cheapest artisan restaurant and its f...       5
+4  I don't know what you will look for in terms o...       3
+
+ Data Quality Check:
+- Total reviews: 1100
+- Average review length: 110.8 characters
+```
