@@ -5,3 +5,8 @@ __pycache__/
 kaggle.json
 data/
 venv/
+*.png
+kaggle_data/reviews.csv
+kaggle_data/sepetcioglu_restaurant.csv
+review-other.json
+sample_200_reviews_with_labels_1756586233.csv
