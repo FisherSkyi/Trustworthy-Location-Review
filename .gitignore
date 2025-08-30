@@ -1,0 +1,5 @@
+.venv/
+main.ipynb
+__pycache__/
+*.pyc
+kaggle.json
