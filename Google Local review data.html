@@ -1,0 +1,938 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0068)https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/#code -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">:root{--toastify-color-light: #fff;--toastify-color-dark: #121212;--toastify-color-info: #3498db;--toastify-color-success: #07bc0c;--toastify-color-warning: #f1c40f;--toastify-color-error: hsl(6, 78%, 57%);--toastify-color-transparent: rgba(255, 255, 255, .7);--toastify-icon-color-info: var(--toastify-color-info);--toastify-icon-color-success: var(--toastify-color-success);--toastify-icon-color-warning: var(--toastify-color-warning);--toastify-icon-color-error: var(--toastify-color-error);--toastify-container-width: fit-content;--toastify-toast-width: 320px;--toastify-toast-offset: 16px;--toastify-toast-top: max(var(--toastify-toast-offset), env(safe-area-inset-top));--toastify-toast-right: max(var(--toastify-toast-offset), env(safe-area-inset-right));--toastify-toast-left: max(var(--toastify-toast-offset), env(safe-area-inset-left));--toastify-toast-bottom: max(var(--toastify-toast-offset), env(safe-area-inset-bottom));--toastify-toast-background: #fff;--toastify-toast-padding: 14px;--toastify-toast-min-height: 64px;--toastify-toast-max-height: 800px;--toastify-toast-bd-radius: 6px;--toastify-toast-shadow: 0px 4px 12px rgba(0, 0, 0, .1);--toastify-font-family: sans-serif;--toastify-z-index: 9999;--toastify-text-color-light: #757575;--toastify-text-color-dark: #fff;--toastify-text-color-info: #fff;--toastify-text-color-success: #fff;--toastify-text-color-warning: #fff;--toastify-text-color-error: #fff;--toastify-spinner-color: #616161;--toastify-spinner-color-empty-area: #e0e0e0;--toastify-color-progress-light: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);--toastify-color-progress-dark: #bb86fc;--toastify-color-progress-info: var(--toastify-color-info);--toastify-color-progress-success: var(--toastify-color-success);--toastify-color-progress-warning: var(--toastify-color-warning);--toastify-color-progress-error: var(--toastify-color-error);--toastify-color-progress-bgo: .2}.Toastify__toast-container{z-index:var(--toastify-z-index);-webkit-transform:translate3d(0,0,var(--toastify-z-index));position:fixed;width:var(--toastify-container-width);box-sizing:border-box;color:#fff;display:flex;flex-direction:column}.Toastify__toast-container--top-left{top:var(--toastify-toast-top);left:var(--toastify-toast-left)}.Toastify__toast-container--top-center{top:var(--toastify-toast-top);left:50%;transform:translate(-50%);align-items:center}.Toastify__toast-container--top-right{top:var(--toastify-toast-top);right:var(--toastify-toast-right);align-items:end}.Toastify__toast-container--bottom-left{bottom:var(--toastify-toast-bottom);left:var(--toastify-toast-left)}.Toastify__toast-container--bottom-center{bottom:var(--toastify-toast-bottom);left:50%;transform:translate(-50%);align-items:center}.Toastify__toast-container--bottom-right{bottom:var(--toastify-toast-bottom);right:var(--toastify-toast-right);align-items:end}.Toastify__toast{--y: 0;position:relative;touch-action:none;width:var(--toastify-toast-width);min-height:var(--toastify-toast-min-height);box-sizing:border-box;margin-bottom:1rem;padding:var(--toastify-toast-padding);border-radius:var(--toastify-toast-bd-radius);box-shadow:var(--toastify-toast-shadow);max-height:var(--toastify-toast-max-height);font-family:var(--toastify-font-family);z-index:0;display:flex;flex:1 auto;align-items:center;word-break:break-word}@media only screen and (max-width: 480px){.Toastify__toast-container{width:100vw;left:env(safe-area-inset-left);margin:0}.Toastify__toast-container--top-left,.Toastify__toast-container--top-center,.Toastify__toast-container--top-right{top:env(safe-area-inset-top);transform:translate(0)}.Toastify__toast-container--bottom-left,.Toastify__toast-container--bottom-center,.Toastify__toast-container--bottom-right{bottom:env(safe-area-inset-bottom);transform:translate(0)}.Toastify__toast-container--rtl{right:env(safe-area-inset-right);left:initial}.Toastify__toast{--toastify-toast-width: 100%;margin-bottom:0;border-radius:0}}.Toastify__toast-container[data-stacked=true]{width:var(--toastify-toast-width)}.Toastify__toast--stacked{position:absolute;width:100%;transform:translate3d(0,var(--y),0) scale(var(--s));transition:transform .3s}.Toastify__toast--stacked[data-collapsed] .Toastify__toast-body,.Toastify__toast--stacked[data-collapsed] .Toastify__close-button{transition:opacity .1s}.Toastify__toast--stacked[data-collapsed=false]{overflow:visible}.Toastify__toast--stacked[data-collapsed=true]:not(:last-child)>*{opacity:0}.Toastify__toast--stacked:after{content:"";position:absolute;left:0;right:0;height:calc(var(--g) * 1px);bottom:100%}.Toastify__toast--stacked[data-pos=top]{top:0}.Toastify__toast--stacked[data-pos=bot]{bottom:0}.Toastify__toast--stacked[data-pos=bot].Toastify__toast--stacked:before{transform-origin:top}.Toastify__toast--stacked[data-pos=top].Toastify__toast--stacked:before{transform-origin:bottom}.Toastify__toast--stacked:before{content:"";position:absolute;left:0;right:0;bottom:0;height:100%;transform:scaleY(3);z-index:-1}.Toastify__toast--rtl{direction:rtl}.Toastify__toast--close-on-click{cursor:pointer}.Toastify__toast-icon{margin-inline-end:10px;width:22px;flex-shrink:0;display:flex}.Toastify--animate{animation-fill-mode:both;animation-duration:.5s}.Toastify--animate-icon{animation-fill-mode:both;animation-duration:.3s}.Toastify__toast-theme--dark{background:var(--toastify-color-dark);color:var(--toastify-text-color-dark)}.Toastify__toast-theme--light,.Toastify__toast-theme--colored.Toastify__toast--default{background:var(--toastify-color-light);color:var(--toastify-text-color-light)}.Toastify__toast-theme--colored.Toastify__toast--info{color:var(--toastify-text-color-info);background:var(--toastify-color-info)}.Toastify__toast-theme--colored.Toastify__toast--success{color:var(--toastify-text-color-success);background:var(--toastify-color-success)}.Toastify__toast-theme--colored.Toastify__toast--warning{color:var(--toastify-text-color-warning);background:var(--toastify-color-warning)}.Toastify__toast-theme--colored.Toastify__toast--error{color:var(--toastify-text-color-error);background:var(--toastify-color-error)}.Toastify__progress-bar-theme--light{background:var(--toastify-color-progress-light)}.Toastify__progress-bar-theme--dark{background:var(--toastify-color-progress-dark)}.Toastify__progress-bar--info{background:var(--toastify-color-progress-info)}.Toastify__progress-bar--success{background:var(--toastify-color-progress-success)}.Toastify__progress-bar--warning{background:var(--toastify-color-progress-warning)}.Toastify__progress-bar--error{background:var(--toastify-color-progress-error)}.Toastify__progress-bar-theme--colored.Toastify__progress-bar--info,.Toastify__progress-bar-theme--colored.Toastify__progress-bar--success,.Toastify__progress-bar-theme--colored.Toastify__progress-bar--warning,.Toastify__progress-bar-theme--colored.Toastify__progress-bar--error{background:var(--toastify-color-transparent)}.Toastify__close-button{color:#fff;position:absolute;top:6px;right:6px;background:transparent;outline:none;border:none;padding:0;cursor:pointer;opacity:.7;transition:.3s ease;z-index:1}.Toastify__toast--rtl .Toastify__close-button{left:6px;right:unset}.Toastify__close-button--light{color:#000;opacity:.3}.Toastify__close-button>svg{fill:currentColor;height:16px;width:14px}.Toastify__close-button:hover,.Toastify__close-button:focus{opacity:1}@keyframes Toastify__trackProgress{0%{transform:scaleX(1)}to{transform:scaleX(0)}}.Toastify__progress-bar{position:absolute;bottom:0;left:0;width:100%;height:100%;z-index:1;opacity:.7;transform-origin:left}.Toastify__progress-bar--animated{animation:Toastify__trackProgress linear 1 forwards}.Toastify__progress-bar--controlled{transition:transform .2s}.Toastify__progress-bar--rtl{right:0;left:initial;transform-origin:right;border-bottom-left-radius:initial}.Toastify__progress-bar--wrp{position:absolute;overflow:hidden;bottom:0;left:0;width:100%;height:5px;border-bottom-left-radius:var(--toastify-toast-bd-radius);border-bottom-right-radius:var(--toastify-toast-bd-radius)}.Toastify__progress-bar--wrp[data-hidden=true]{opacity:0}.Toastify__progress-bar--bg{opacity:var(--toastify-color-progress-bgo);width:100%;height:100%}.Toastify__spinner{width:20px;height:20px;box-sizing:border-box;border:2px solid;border-radius:100%;border-color:var(--toastify-spinner-color-empty-area);border-right-color:var(--toastify-spinner-color);animation:Toastify__spin .65s linear infinite}@keyframes Toastify__bounceInRight{0%,60%,75%,90%,to{animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate3d(3000px,0,0)}60%{opacity:1;transform:translate3d(-25px,0,0)}75%{transform:translate3d(10px,0,0)}90%{transform:translate3d(-5px,0,0)}to{transform:none}}@keyframes Toastify__bounceOutRight{20%{opacity:1;transform:translate3d(-20px,var(--y),0)}to{opacity:0;transform:translate3d(2000px,var(--y),0)}}@keyframes Toastify__bounceInLeft{0%,60%,75%,90%,to{animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate3d(-3000px,0,0)}60%{opacity:1;transform:translate3d(25px,0,0)}75%{transform:translate3d(-10px,0,0)}90%{transform:translate3d(5px,0,0)}to{transform:none}}@keyframes Toastify__bounceOutLeft{20%{opacity:1;transform:translate3d(20px,var(--y),0)}to{opacity:0;transform:translate3d(-2000px,var(--y),0)}}@keyframes Toastify__bounceInUp{0%,60%,75%,90%,to{animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate3d(0,3000px,0)}60%{opacity:1;transform:translate3d(0,-20px,0)}75%{transform:translate3d(0,10px,0)}90%{transform:translate3d(0,-5px,0)}to{transform:translateZ(0)}}@keyframes Toastify__bounceOutUp{20%{transform:translate3d(0,calc(var(--y) - 10px),0)}40%,45%{opacity:1;transform:translate3d(0,calc(var(--y) + 20px),0)}to{opacity:0;transform:translate3d(0,-2000px,0)}}@keyframes Toastify__bounceInDown{0%,60%,75%,90%,to{animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate3d(0,-3000px,0)}60%{opacity:1;transform:translate3d(0,25px,0)}75%{transform:translate3d(0,-10px,0)}90%{transform:translate3d(0,5px,0)}to{transform:none}}@keyframes Toastify__bounceOutDown{20%{transform:translate3d(0,calc(var(--y) - 10px),0)}40%,45%{opacity:1;transform:translate3d(0,calc(var(--y) + 20px),0)}to{opacity:0;transform:translate3d(0,2000px,0)}}.Toastify__bounce-enter--top-left,.Toastify__bounce-enter--bottom-left{animation-name:Toastify__bounceInLeft}.Toastify__bounce-enter--top-right,.Toastify__bounce-enter--bottom-right{animation-name:Toastify__bounceInRight}.Toastify__bounce-enter--top-center{animation-name:Toastify__bounceInDown}.Toastify__bounce-enter--bottom-center{animation-name:Toastify__bounceInUp}.Toastify__bounce-exit--top-left,.Toastify__bounce-exit--bottom-left{animation-name:Toastify__bounceOutLeft}.Toastify__bounce-exit--top-right,.Toastify__bounce-exit--bottom-right{animation-name:Toastify__bounceOutRight}.Toastify__bounce-exit--top-center{animation-name:Toastify__bounceOutUp}.Toastify__bounce-exit--bottom-center{animation-name:Toastify__bounceOutDown}@keyframes Toastify__zoomIn{0%{opacity:0;transform:scale3d(.3,.3,.3)}50%{opacity:1}}@keyframes Toastify__zoomOut{0%{opacity:1}50%{opacity:0;transform:translate3d(0,var(--y),0) scale3d(.3,.3,.3)}to{opacity:0}}.Toastify__zoom-enter{animation-name:Toastify__zoomIn}.Toastify__zoom-exit{animation-name:Toastify__zoomOut}@keyframes Toastify__flipIn{0%{transform:perspective(400px) rotateX(90deg);animation-timing-function:ease-in;opacity:0}40%{transform:perspective(400px) rotateX(-20deg);animation-timing-function:ease-in}60%{transform:perspective(400px) rotateX(10deg);opacity:1}80%{transform:perspective(400px) rotateX(-5deg)}to{transform:perspective(400px)}}@keyframes Toastify__flipOut{0%{transform:translate3d(0,var(--y),0) perspective(400px)}30%{transform:translate3d(0,var(--y),0) perspective(400px) rotateX(-20deg);opacity:1}to{transform:translate3d(0,var(--y),0) perspective(400px) rotateX(90deg);opacity:0}}.Toastify__flip-enter{animation-name:Toastify__flipIn}.Toastify__flip-exit{animation-name:Toastify__flipOut}@keyframes Toastify__slideInRight{0%{transform:translate3d(110%,0,0);visibility:visible}to{transform:translate3d(0,var(--y),0)}}@keyframes Toastify__slideInLeft{0%{transform:translate3d(-110%,0,0);visibility:visible}to{transform:translate3d(0,var(--y),0)}}@keyframes Toastify__slideInUp{0%{transform:translate3d(0,110%,0);visibility:visible}to{transform:translate3d(0,var(--y),0)}}@keyframes Toastify__slideInDown{0%{transform:translate3d(0,-110%,0);visibility:visible}to{transform:translate3d(0,var(--y),0)}}@keyframes Toastify__slideOutRight{0%{transform:translate3d(0,var(--y),0)}to{visibility:hidden;transform:translate3d(110%,var(--y),0)}}@keyframes Toastify__slideOutLeft{0%{transform:translate3d(0,var(--y),0)}to{visibility:hidden;transform:translate3d(-110%,var(--y),0)}}@keyframes Toastify__slideOutDown{0%{transform:translate3d(0,var(--y),0)}to{visibility:hidden;transform:translate3d(0,500px,0)}}@keyframes Toastify__slideOutUp{0%{transform:translate3d(0,var(--y),0)}to{visibility:hidden;transform:translate3d(0,-500px,0)}}.Toastify__slide-enter--top-left,.Toastify__slide-enter--bottom-left{animation-name:Toastify__slideInLeft}.Toastify__slide-enter--top-right,.Toastify__slide-enter--bottom-right{animation-name:Toastify__slideInRight}.Toastify__slide-enter--top-center{animation-name:Toastify__slideInDown}.Toastify__slide-enter--bottom-center{animation-name:Toastify__slideInUp}.Toastify__slide-exit--top-left,.Toastify__slide-exit--bottom-left{animation-name:Toastify__slideOutLeft;animation-timing-function:ease-in;animation-duration:.3s}.Toastify__slide-exit--top-right,.Toastify__slide-exit--bottom-right{animation-name:Toastify__slideOutRight;animation-timing-function:ease-in;animation-duration:.3s}.Toastify__slide-exit--top-center{animation-name:Toastify__slideOutUp;animation-timing-function:ease-in;animation-duration:.3s}.Toastify__slide-exit--bottom-center{animation-name:Toastify__slideOutDown;animation-timing-function:ease-in;animation-duration:.3s}@keyframes Toastify__spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}
+</style>
+    <title>Google Local review data</title>
+    <meta name="author" content="Jiacheng Li">
+    
+
+    <script type="text/javascript" async="" src="./Google Local review data_files/dc.js.download"></script><script type="application/ld+json">
+    {"@context":"http://schema.org/",
+     "@type":"Dataset",
+     "name":"Google Local review data 2018",
+     "description":"## Context\n\nThis Dataset contains review information on Google map (ratings, text, images, etc.), business metadata (address, geographical info, descriptions, category information, price, open hours, and MISC info), and links (relative businesses) in the United States. The dataset includes 666.3 million reviews, 113.6 million users and 4.9 million businesses up to Sep 2021.",
+     "url":"https://jiachengli1995.github.io/google/index.html",
+     "sameAs":"","version":2,
+     "creator":{"@type":"Organization","name":"UCSD CSE Research Project","url":"https://jiachengli1995.github.io/google/index.html"}}
+    </script>
+
+
+    <script type="text/javascript" language="javascript" src="./Google Local review data_files/jquery-1.4.2.min.js.download"></script>
+    <link rel="stylesheet" type="text/css" href="./Google Local review data_files/style.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="./Google Local review data_files/js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-139424956-2');
+    </script>
+  </head>
+<body>
+
+<div id="left_column">
+</div>
+
+<div id="main">
+<!-- <div id="header"> -->
+  <h1>Google Local Data (2021)</h1>
+  
+  <p><b><a href="https://www.linkedin.com/in/tianyang-zhang-sky/">Tianyang Zhang</a></b>, UCSD</p>
+  <p><b><a href="https://jiachengli1995.github.io/">Jiacheng Li</a></b>, UCSD</p>
+
+<h2>Description</h2>
+
+<p>This Dataset contains review information on Google map (ratings, text, images, etc.), business metadata (address, geographical info, descriptions, category information, price, open hours, and MISC info), and links (relative businesses) up to Sep 2021 in the United States.</p>
+
+<table class="code-table">
+  <tbody><tr> <td>Reviews:</td> <td>666,324,103</td> </tr>
+  <tr> <td>Users:</td> <td>113,643,107</td> </tr>
+  <tr> <td>Businesses:</td> <td>4,963,111</td> </tr>
+</tbody></table>
+
+<h2>Citation</h2>
+<p>Please cite the following papers if you use the data in any way:</p>
+<p>
+  <b>UCTopic: Unsupervised Contrastive Learning for Phrase Representations and Topic Mining</b><br>
+  Jiacheng Li, Jingbo Shang, Julian McAuley<br>
+  <em>Annual Meeting of the Association for Computational Linguistics (ACL)</em>, 2022<br>
+  <a href="https://aclanthology.org/2022.acl-long.426.pdf">pdf</a>
+</p>
+<br>
+<p>
+  <b>Personalized Showcases: Generating Multi-Modal Explanations for Recommendations</b><br>
+  An Yan, Zhankui He, Jiacheng Li, Tianyang Zhang, Julian Mcauley<br>
+  <em>The 46th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR)</em>, 2023<br>
+  <a href="https://arxiv.org/pdf/2207.00422.pdf">pdf</a>
+</p>
+
+<h2>Contact</h2>
+<p>Jiacheng Li (j9li@eng.ucsd.edu)</p>
+
+<br><hr>
+
+<h2>Directory</h2>
+
+  <p>	
+  	</p><li>
+  		<b><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/#files">Files</a></b>
+  		<ul>
+  			<b><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/#complete-data">complete data</a></b>
+  		</ul>
+  		<ul>
+  			<b><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/#subsets">K-cores and ratings-only data</a></b>
+  		</ul> 
+  		<ul>
+  			<b><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/#sample-review">sample review</a></b>
+  		</ul>
+  		<ul>
+  			<b><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/#sample-metadata">sample metadata </a></b>
+  		</ul>
+  	</li>
+	<li>
+  		<b><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/#code">Code</a></b> 
+  	</li>
+  <p></p>
+
+
+<a name="files"></a>
+<h2>Files</h2>
+
+
+<a name="complete-data"></a>
+<h3>Complete review data</h3>
+
+<p>Please only download these (large!) files if you really need them. We recommend using the smaller datasets (i.e. k-core and CSV files) as shown in the <a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/#subsets">next section</a>.</p> 
+
+<table class="code-table" style="font-size: 0.7em; width:90%">
+<tbody><tr> 
+      <td>Alabama</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Alabama.json.gz">reviews</a> (8,967,499 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Alabama.json.gz">metadata</a> (74,967 businesses)</td> 
+    </tr>
+
+<tr> 
+      <td>Alaska</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Alaska.json.gz">reviews</a> (1,051,246 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Alaska.json.gz">metadata</a> (12,774 businesses)</td> 
+    </tr>
+
+<tr> 
+      <td>Arizona</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Arizona.json.gz">reviews</a> (18,375,050 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Arizona.json.gz">metadata</a> (108,579 businesses)</td> 
+    </tr>
+
+<tr> 
+      <td>Arkansas</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Arkansas.json.gz">reviews</a> (5,106,056 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Arkansas.json.gz">metadata</a> (47,246 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>California</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-California.json.gz">reviews</a> (70,529,977 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-California.json.gz">metadata</a> (515,961 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Colorado</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Colorado.json.gz">reviews</a> (15,681,222 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Colorado.json.gz">metadata</a> (106,829 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Connecticut</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Connecticut.json.gz">reviews</a> (5,181,800 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Connecticut.json.gz">metadata</a> (49,200 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Delaware</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Delaware.json.gz">reviews</a> (1,885,948 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Delaware.json.gz">metadata</a> (14,706 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>District of Columbia</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-District_of_Columbia.json.gz">reviews</a> (1,894,317 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-District_of_Columbia.json.gz">metadata</a> (11,060 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Florida</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Florida.json.gz">reviews</a> (61,803,524 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Florida.json.gz">metadata</a> (378,020 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Georgia</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Georgia.json.gz">reviews</a> (24,060,125 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Georgia.json.gz">metadata</a> (166,381 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Hawaii</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Hawaii.json.gz">reviews</a> (3,111,531 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Hawaii.json.gz">metadata</a> (21,507 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Idaho</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Idaho.json.gz">reviews</a> (3,892,636 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Idaho.json.gz">metadata</a> (33,214 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Illinois</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Illinois.json.gz">reviews</a> (23,096,838 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Illinois.json.gz">metadata</a> (179,205 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Indiana</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Indiana.json.gz">reviews</a> (12,865,167 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Indiana.json.gz">metadata</a> (100,391 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Iowa</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Iowa.json.gz">reviews</a> (4,838,887 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Iowa.json.gz">metadata</a> (47,794 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Kansas</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Kansas.json.gz">reviews</a> (5,546,880 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Kansas.json.gz">metadata</a> (46,286 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Kentucky</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Kentucky.json.gz">reviews</a> (7,654,993 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Kentucky.json.gz">metadata</a> (63,193 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Louisiana</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Louisiana.json.gz">reviews</a> (7,536,078 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Louisiana.json.gz">metadata</a> (63,315 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Maine</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Maine.json.gz">reviews</a> (2,214,773 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Maine.json.gz">metadata</a> (24,853 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Maryland</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Maryland.json.gz">reviews</a> (10,728,483 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Maryland.json.gz">metadata</a> (78,144 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Massachusetts</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Massachusetts.json.gz">reviews</a> (10,447,007 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Massachusetts.json.gz">metadata</a> (92,520 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Michigan</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Michigan.json.gz">reviews</a> (20,776,155 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Michigan.json.gz">metadata</a> (158,819 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Minnesota</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Minnesota.json.gz">reviews</a> (9,520,258 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Minnesota.json.gz">metadata</a> (80,964 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Mississippi</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Mississippi.json.gz">reviews</a> (3,861,771 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Mississippi.json.gz">metadata</a> (37,147 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Missouri</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Missouri.json.gz">reviews</a> (13,416,511 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Missouri.json.gz">metadata</a> (99,569 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Montana</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Montana.json.gz">reviews</a> (1,933,939 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Montana.json.gz">metadata</a> (21,680 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Nebraska</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Nebraska.json.gz">reviews</a> (3,286,810 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Nebraska.json.gz">metadata</a> (30,016 businesses)</td> 
+    </tr>
+    
+    <tr> 
+      <td>Nevada</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Nevada.json.gz">reviews</a> (8,833,403 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Nevada.json.gz">metadata</a> (48,237 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>New Hampshire</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-New_Hampshire.json.gz">reviews</a> (2,648,081 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-New_Hampshire.json.gz">metadata</a> (24,767 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>New Jersey</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-New_Jersey.json.gz">reviews</a> (15,720,266 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-New_Jersey.json.gz">metadata</a> (127,276 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>New Mexico</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-New_Mexico.json.gz">reviews</a> (4,705,389 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-New_Mexico.json.gz">metadata</a> (34,703 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>New York</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-New_York.json.gz">reviews</a> (33,459,761 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-New_York.json.gz">metadata</a> (272,189 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>North Carolina</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-North_Carolina.json.gz">reviews</a> (22,299,136 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-North_Carolina.json.gz">metadata</a> (166,235 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>North Dakota</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-North_Dakota.json.gz">reviews</a> (1,109,558 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-North_Dakota.json.gz">metadata</a> (11,987 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Ohio</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Ohio.json.gz">reviews</a> (23,039,365 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Ohio.json.gz">metadata</a> (173,761 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Oklahoma</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Oklahoma.json.gz">reviews</a> (8,482,820 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Oklahoma.json.gz">metadata</a> (68,102 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Oregon</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Oregon.json.gz">reviews</a> (11,012,170 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Oregon.json.gz">metadata</a> (93,476 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Pennsylvania</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Pennsylvania.json.gz">reviews</a> (21,944,802 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Pennsylvania.json.gz">metadata</a> (190,816 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Rhode Island</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Rhode_Island.json.gz">reviews</a> (1,777,094 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Rhode_Island.json.gz">metadata</a> (15,941 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>South Carolina</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-South_Carolina.json.gz">reviews</a> (11,995,482 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-South_Carolina.json.gz">metadata</a> (84,929 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>South Dakota</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-South_Dakota.json.gz">reviews</a> (1,452,599 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-South_Dakota.json.gz">metadata</a> (14,257 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Tennessee</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Tennessee.json.gz">reviews</a> (15,951,213 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Tennessee.json.gz">metadata</a> (111,395 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Texas</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Texas.json.gz">reviews</a> (66,435,184 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Texas.json.gz">metadata</a> (447,314 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Utah</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Utah.json.gz">reviews</a> (9,081,167 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Utah.json.gz">metadata</a> (58,797 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Vermont</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Vermont.json.gz">reviews</a> (852,203 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Vermont.json.gz">metadata</a> (11,291 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Virginia</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Virginia.json.gz">reviews</a> (15,957,938 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Virginia.json.gz">metadata</a> (119,673 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Washington</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Washington.json.gz">reviews</a> (16,541,734 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Washington.json.gz">metadata</a> (121,304 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>West Virginia</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-West_Virginia.json.gz">reviews</a> (2,208,199 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-West_Virginia.json.gz">metadata</a> (23,541 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Wisconsin</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Wisconsin.json.gz">reviews</a> (10,246,685 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Wisconsin.json.gz">metadata</a> (92,041 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Wyoming</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Wyoming.json.gz">reviews</a> (1,141,421 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-Wyoming.json.gz">metadata</a> (12,088 businesses)</td> 
+    </tr>
+
+    <tr> 
+      <td>Other</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-other.json.gz">reviews</a> (162,952 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/meta-other.json.gz">metadata</a> (1,224 businesses)</td> 
+    </tr>
+</tbody></table>
+<p></p>
+
+
+<a name="subsets"></a>
+<h3>"Small" subsets for experimentation</h3>
+
+<p>If you're using this data for a class project (or similar) please consider using one of these smaller datasets below before requesting the larger files.</p> 
+
+<p><b>K-cores</b> (i.e., dense subsets): These data have been reduced to extract the <a href="https://en.wikipedia.org/wiki/Degeneracy_(graph_theory)">k-core</a>, such that each of the remaining users and items have k reviews each.</p>
+
+<p><b>Ratings only:</b> These datasets include no metadata or reviews, but only (business,user,rating,timestamp) tuples. Thus they are suitable for use with <a href="http://www.mymedialite.net/">mymedialite</a> (or similar) packages.</p>
+<p>You can directly download the following smaller per-category datasets.</p>
+<p>
+</p><table class="code-table" style="font-size: 0.7em; width:90%">
+    <tbody><tr> 
+      <td>Alabama</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Alabama_10.json.gz">10-core</a> (5,146,330 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Alabama.csv.gz">ratings only</a> (8,967,499 ratings)</td> 
+    </tr>
+
+<tr> 
+      <td>Alaska</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Alaska_10.json.gz">10-core</a> (521,515 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Alaska.csv.gz">ratings only</a> (1,051,246 ratings)</td> 
+    </tr>
+
+<tr> 
+      <td>Arizona</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Arizona_10.json.gz">10-core</a> (10,764,435 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Arizona.csv.gz">ratings only</a> (18,375,050 ratings)</td> 
+    </tr>
+
+<tr> 
+      <td>Arkansas</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Arkansas_10.json.gz">10-core</a> (2,855,468 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Arkansas.csv.gz">ratings only</a> (5,106,056 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>California</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-California_10.json.gz">10-core</a> (44,476,890 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-California.csv.gz">ratings only</a> (70,529,977 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Colorado</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Colorado_10.json.gz">10-core</a> (8,738,271 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Colorado.csv.gz">ratings only</a> (15,681,222 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Connecticut</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Connecticut_10.json.gz">10-core</a> (2,680,107 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Connecticut.csv.gz">ratings only</a> (5,181,800 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Delaware</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Delaware_10.json.gz">10-core</a> (905,537 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Delaware.csv.gz">ratings only</a> (1,885,948 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>District of Columbia</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-District_of_Columbia_10.json.gz">10-core</a> (564,783 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-District_of_Columbia.csv.gz">ratings only</a> (1,894,317 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Florida</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Florida_10.json.gz">10-core</a> (35,457,319 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Florida.csv.gz">ratings only</a> (61,803,524 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Georgia</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Georgia_10.json.gz">10-core</a> (13,599,687 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Georgia.csv.gz">ratings only</a> (24,060,125 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Hawaii</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Hawaii_10.json.gz">10-core</a> (1,504,347 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Hawaii.csv.gz">ratings only</a> (3,111,531 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Idaho</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Idaho_10.json.gz">10-core</a> (2,085,487 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Idaho.csv.gz">ratings only</a> (3,892,636 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>Illinois</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Illinois_10.json.gz">10-core</a> (13,237,848 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Illinois.csv.gz">ratings only</a> (23,096,838 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>Indiana</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Indiana_10.json.gz">10-core</a> (7,638,803 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Indiana.csv.gz">ratings only</a> (12,865,167 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Iowa</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Iowa_10.json.gz">10-core</a> (2,677,684 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Iowa.csv.gz">ratings only</a> (4,838,887 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Kansas</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Kansas_10.json.gz">10-core</a> (3,080,115 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Kansas.csv.gz">ratings only</a> (5,546,880 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>Kentucky</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Kentucky_10.json.gz">10-core</a> (4,240,662 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Kentucky.csv.gz">ratings only</a> (7,654,993 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>Louisiana</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Louisiana_10.json.gz">10-core</a> (3,985,782 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Louisiana.csv.gz">ratings only</a> (7,536,078 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>Maine</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Maine_10.json.gz">10-core</a> (1,123,881 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Maine.csv.gz">ratings only</a> (2,214,773 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>Maryland</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Maryland_10.json.gz">10-core</a> (5,590,890 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Maryland.csv.gz">ratings only</a> (10,728,483 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Massachusetts</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Massachusetts_10.json.gz">10-core</a> (5,624,944 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Massachusetts.csv.gz">ratings only</a> (10,447,007 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>Michigan</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Michigan_10.json.gz">10-core</a> (13,212,364 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Michigan.csv.gz">ratings only</a> (20,776,155 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Minnesota</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Minnesota_10.json.gz">10-core</a> (5,646,319 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Minnesota.csv.gz">ratings only</a> (9,520,258 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Mississippi</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Mississippi_10.json.gz">10-core</a> (1,971,181 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Mississippi.csv.gz">ratings only</a> (3,861,771 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>Missouri</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Missouri_10.json.gz">10-core</a> (7,863,559 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Missouri.csv.gz">ratings only</a> (13,416,511 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>Montana</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Montana_10.json.gz">10-core</a> (950,370 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Montana.csv.gz">ratings only</a> (1,933,939 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Nebraska</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Nebraska_10.json.gz">10-core</a> (1,817,866 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Nebraska.csv.gz">ratings only</a> (3,286,810 ratings)</td>  
+    </tr>
+    
+    <tr> 
+      <td>Nevada</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Nevada_10.json.gz">10-core</a> (4,170,080 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Nevada.csv.gz">ratings only</a> (8,833,403 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>New Hampshire</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-New_Hampshire_10.json.gz">10-core</a> (1,296,603 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-New_Hampshire.csv.gz">ratings only</a> (2,648,081 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>New Jersey</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-New_Jersey_10.json.gz">10-core</a> (8,227,961 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-New_Jersey.csv.gz">ratings only</a> (15,720,266 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>New Mexico</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-New_Mexico_10.json.gz">10-core</a> (2,571,363 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-New_Mexico.csv.gz">ratings only</a> (4,705,389 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>New York</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-New_York_10.json.gz">10-core</a> (18,661,975 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-New_York.csv.gz">ratings only</a> (33,459,761 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>North Carolina</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-North_Carolina_10.json.gz">10-core</a> (12,905,081 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-North_Carolina.csv.gz">ratings only</a> (22,299,136 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>North Dakota</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-North_Dakota_10.json.gz">10-core</a> (563,693 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-North_Dakota.csv.gz">ratings only</a> (1,109,558 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>Ohio</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Ohio_10.json.gz">10-core</a> (14,506,563 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Ohio.csv.gz">ratings only</a> (23,039,365 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Oklahoma</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Oklahoma_10.json.gz">10-core</a> (5,011,462 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Oklahoma.csv.gz">ratings only</a> (8,482,820 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Oregon</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Oregon_10.json.gz">10-core</a> (6,270,332 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Oregon.csv.gz">ratings only</a> (11,012,170 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>Pennsylvania</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Pennsylvania_10.json.gz">10-core</a> (12,772,358 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Pennsylvania.csv.gz">ratings only</a> (21,944,802 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>Rhode Island</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Rhode_Island_10.json.gz">10-core</a> (890,006 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Rhode_Island.csv.gz">ratings only</a> (1,777,094 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>South Carolina</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-South_Carolina_10.json.gz">10-core</a> (6,504,999 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-South_Carolina.csv.gz">ratings only</a> (11,995,482 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>South Dakota</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-South_Dakota_10.json.gz">10-core</a> (673,048 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-South_Dakota.csv.gz">ratings only</a> (1,452,599 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Tennessee</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Tennessee_10.json.gz">10-core</a> (8,855,714 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Tennessee.csv.gz">ratings only</a> (15,951,213 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Texas</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Texas_10.json.gz">10-core</a> (40,696,824 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Texas.csv.gz">ratings only</a> (66,435,184 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>Utah</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Utah_10.json.gz">10-core</a> (4,933,807 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Utah.csv.gz">ratings only</a> (9,081,167 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>Vermont</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Vermont_10.json.gz">10-core</a> (324,725 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Vermont.csv.gz">ratings only</a> (852,203 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>Virginia</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Virginia_10.json.gz">10-core</a> (8,562,059 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Virginia.csv.gz">ratings only</a> (15,957,938 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Washington</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Washington_10.json.gz">10-core</a> (10,192,020 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Washington.csv.gz">ratings only</a> (16,541,734 ratings)</td>  
+    </tr>
+
+    <tr> 
+      <td>West Virginia</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-West_Virginia_10.json.gz">10-core</a> (1,080,333 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-West_Virginia.csv.gz">ratings only</a> (2,208,199 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Wisconsin</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Wisconsin_10.json.gz">10-core</a> (6,036,482 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Wisconsin.csv.gz">ratings only</a> (10,246,685 ratings)</td> 
+    </tr>
+
+    <tr> 
+      <td>Wyoming</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/review-Wyoming_10.json.gz">10-core</a> (427,808 reviews)</td> 
+      <td><a href="https://mcauleylab.ucsd.edu/public_datasets/gdrive/googlelocal/rating-Wyoming.csv.gz">ratings only</a> (1,141,421 ratings)</td>  
+    </tr>
+</tbody></table>
+<p></p>
+
+
+<h3>Data format</h3>
+
+<p>Format is one-review-per-line in json. See examples below for further help reading the data.</p>
+
+<a name="sample-review"></a>
+<h3>Sample review:</h3>
+
+<p>
+</p><div class="code">{
+  'user_id': '106533466896145407182', 
+  'name': 'Amy VG', 
+  'time': 1568748357166, 
+  'rating': 5, 
+  'text': "I can't say I've ever been excited about a dentist visit before, but there's a first for everything! Loved my experience at Lush today. Every person in the office was friendly and personable- plus the office itself is gorgeous! Great experience, I highly recommend!", 
+  'pics': [
+  {
+    'url': ['https://lh5.googleusercontent.com/p/AF1QipMBzN4BJV9YCObcw_ifNzFPm-u38hO3oimOA8Fb=w150-h150-k-no-p']
+  }, 
+  {
+    'url': ['https://lh5.googleusercontent.com/p/AF1QipNS1PEXEvadfUlhRkRDJ09id
+    Mxh3CveZGZYuTo5=w150-h150-k-no-p']
+  }
+  ], 
+  'resp': {
+    'time': 1568770503975, 
+    'text': 'We love getting to meet new patients like yourself.  Thanks for giving our office a chance to take care of your dental needs and thanks for the nice review!'
+  }, 
+  'gmap_id': '0x87ec2394c2cd9d2d:0xd1119cfbee0da6f3'
+}
+</div>
+
+<div class="code">{
+  'user_id': '101463350189962023774', 
+  'name': 'Jordan Adams', 
+  'time': 1627750414677, 
+  'rating': 5, 
+  'text': 'Cool place, great people, awesome dentist!', 
+  'pics': [
+  {
+    'url': ['https://lh5.googleusercontent.com/p/AF1QipNq2nZC5TH4_M7h5xRAd
+    61hoTgvY1o9lozABguI=w150-h150-k-no-p']
+  }
+  ], 
+  'resp': {
+    'time': 1628455067818, 
+    'text': 'Thank you for your five-star review! -Dr. Blake'
+  }, 
+  'gmap_id': '0x87ec2394c2cd9d2d:0xd1119cfbee0da6f3'
+}
+</div>
+<p></p>
+
+<p>where
+
+  </p><ul>
+    <li><tt>user_id</tt> - ID of the reviewer</li>
+    <li><tt>name</tt> - name of the reviwer</li>
+    <li><tt>time</tt> - time of the review (unix time)</li>
+    <li><tt>rating</tt> - rating of the business</li>
+    <li><tt>text</tt> - text of the review</li>
+    <li><tt>pics</tt> - pictures of the review</li>
+    <li><tt>resp</tt> - business response to the review including unix time and text of the response</li>
+    <li><tt>gmap_id</tt> - ID of the business</li>
+  </ul>
+<p></p>
+
+<h3>Metadata</h3>
+<a name="sample-metadata"></a>
+<h3>Sample metadata:</h3>
+
+<p>
+</p><div class="code">{
+  'name': 'Walgreens Pharmacy', 
+  'address': 'Walgreens Pharmacy, 124 E North St, Kendallville, IN 46755', 
+  'gmap_id': '0x881614ce7c13acbb:0x5c7b18bbf6ec4f7e', 
+  'description': 'Department of the Walgreens chain providing prescription medications &amp; other health-related items.', 
+  'latitude': 41.451859999999996, 
+  'longitude': -85.2666757, 
+  'category': ['Pharmacy'], 
+  'avg_rating': 4.2, 
+  'num_of_reviews': 5, 
+  'price': '$$', 
+  'hours': [['Thursday', '8AM–1:30PM'], ['Friday', '8AM–1:30PM'], ['Saturday', '9AM–1:30PM'], ['Sunday', '10AM–1:30PM'], ['Monday', '8AM–1:30PM'], ['Tuesday', '8AM–1:30PM'], ['Wednesday', '8AM–1:30PM']], 
+  'MISC': {
+    'Service options': ['Curbside pickup', 'Drive-through', 'In-store pickup', 'In-store shopping'], 
+    'Health &amp; safety': ['Mask required', 'Staff wear masks', 'Staff get temperature checks'], 
+    'Accessibility': ['Wheelchair accessible entrance', 'Wheelchair accessible parking lot'], 
+    'Planning': ['Quick visit'], 
+    'Payments': ['Checks', 'Debit cards']
+  }, 
+  'state': 'Closes soon ⋅ 1:30PM ⋅ Reopens 2PM', 
+  'relative_results': ['0x881614cd49e4fa33:0x2d507c24ff4f1c74', '0x8816145bf5141c89:0x535c1d605109f94b', '0x881614cda24cc591:0xca426e3a9b826432', '0x88162894d98b91ef:0xd139b34de70d3e03', '0x881615400b5e57f9:0xc56d17dbe420a67f'], 
+  'url': 'https://www.google.com/maps/place//data=!4m2!3m1!1s0x881614ce7c13acb
+  b:0x5c7b18bbf6ec4f7e?authuser=-1&amp;hl=en&amp;gl=us'
+}
+</div>
+<p></p>
+
+<p>where
+
+  </p><ul>
+    <li><tt>name</tt> - name of the business</li>
+    <li><tt>address</tt> - address of the business</li>
+    <li><tt>gmap_id</tt> - ID of the business</li>
+    <li><tt>description</tt> - description of the business</li>
+    <li><tt>latitude</tt> - latitude of the business</li>
+    <li><tt>longitude</tt> - longitude of the business</li>
+    <li><tt>category</tt> - category of the business</li>
+    <li><tt>avg_rating</tt> - average rating of the business</li>
+    <li><tt>num_of_reviews</tt> - number of reviews</li>
+    <li><tt>price</tt> - price of the business</li>
+    <li><tt>hours</tt> - open hours</li>
+    <li><tt>MISC</tt> - MISC information</li>
+    <li><tt>state</tt> - the current status of the business (e.g., permanently closed)</li>
+    <li><tt>relative_results</tt> - relative businesses recommended by Google</li>
+    <li><tt>url</tt> - URL of the business</li>
+  </ul>
+<p></p>
+
+<a name="code"></a>
+<h2>Code</h2>
+
+<h3>Reading the data</h3>
+
+<p>Data can be treated as python dictionary objects. A simple script to read any of the above the data is as follows:</p>
+
+<p>
+</p><div class="code">def parse(path):
+  g = gzip.open(path, 'r')
+  for l in g:
+    yield json.loads(l)
+</div>
+<p></p>
+
+<script type="text/javascript">
+if (typeof jQuery != 'undefined') {
+  jQuery(document).ready(function($) {
+    var filetypes = /\.(zip|exe|pdf|doc*|xls*|ppt*|mp3)$/i;
+    var baseHref = '';
+    if (jQuery('base').attr('href') != undefined)
+      baseHref = jQuery('base').attr('href');
+    jQuery('a').each(function() {
+      var href = jQuery(this).attr('href');
+      if (href && (href.match(/^https?\:/i)) && (!href.match(document.domain))) {
+        jQuery(this).click(function() {
+          var extLink = href.replace(/^https?\:\/\//i, '');
+          _gaq.push(['_trackEvent', 'External', 'Click', extLink]);
+          if (jQuery(this).attr('target') != undefined && jQuery(this).attr('target').toLowerCase() != '_blank') {
+            setTimeout(function() { location.href = href; }, 200);
+            return false;
+          }
+        });
+      }
+      else if (href && href.match(/^mailto\:/i)) {
+        jQuery(this).click(function() {
+          var mailLink = href.replace(/^mailto\:/i, '');
+          _gaq.push(['_trackEvent', 'Email', 'Click', mailLink]);
+        });
+      }
+      else if (href && href.match(filetypes)) {
+        jQuery(this).click(function() {
+          var extension = (/[.]/.exec(href)) ? /[^.]+$/.exec(href) : undefined;
+          var filePath = href;
+          _gaq.push(['_trackEvent', 'Download', 'Click-' + extension, filePath]);
+          if (jQuery(this).attr('target') != undefined && jQuery(this).attr('target').toLowerCase() != '_blank') {
+            setTimeout(function() { location.href = baseHref + href; }, 200);
+            return false;
+          }
+        });
+      }
+    });
+  });
+}
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23010657-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+
+
+
+</div></body></html>
