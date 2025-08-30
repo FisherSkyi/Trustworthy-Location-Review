@@ -3,5 +3,5 @@
 __pycache__/
 *.pyc
 kaggle.json
-kaggle_data/
+data/
 venv/
