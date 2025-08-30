@@ -3,3 +3,4 @@ main.ipynb
 __pycache__/
 *.pyc
 kaggle.json
+kaggle_data/
