@@ -8,3 +8,9 @@
 - Enforce policies: Automatically flag reviews violating predefined policies
 
 
+## Set Up
+```bash
+pip install -r requirements.txt
+python -m spacy download en_core_web_sm
+```
+
