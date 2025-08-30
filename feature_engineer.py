@@ -93,20 +93,22 @@ class FeatureExtractor:
 
         return pd.DataFrame(all_features)
 
-df = load_and_preprocess_dataset('./data/google_maps_restaurant_reviews/reviews.csv')
-# Extract features
-feature_extractor = FeatureExtractor()
-features_df = feature_extractor.extract_all_features(df)
+if __name__ == '__main__':
+    df = load_and_preprocess_dataset('./data/google_maps_restaurant_reviews/reviews.csv')
+    if df is not None:
+        # Extract features
+        feature_extractor = FeatureExtractor()
+        features_df = feature_extractor.extract_all_features(df)
 
-print("Feature Engineering Complete!")
-print(f"Extracted {len(features_df.columns)} features")
-print("\nFeature columns:")
-print(list(features_df.columns))
+        print("Feature Engineering Complete!")
+        print(f"Extracted {len(features_df.columns)} features")
+        print("\nFeature columns:")
+        print(list(features_df.columns))
 
-# Combine with original data
-df_with_features = pd.concat([df, features_df], axis=1)
-print(f"\nDataset shape with features: {df_with_features.shape}")
+        # Combine with original data
+        df_with_features = pd.concat([df, features_df], axis=1)
+        print(f"\nDataset shape with features: {df_with_features.shape}")
 
-# Display feature statistics
-print("\nFeature Statistics:")
-print(features_df.describe())
+        # Display feature statistics
+        print("\nFeature Statistics:")
+        print(features_df.describe())
